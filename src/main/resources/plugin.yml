@@ -1,0 +1,11 @@
+name: EssxDiscordWhitelist
+version: '${version}'
+main: com.github.koxsosen.essxdiscordwhitelist.Essxdiscordwhitelist
+api-version: 1.18
+load: POSTWORLD
+authors: [ KoxSosen ]
+description: Whitelist plugin for EssentialsX.
+website: hahota.net
+depend:
+  - Essentials
+  - EssentialsDiscord
