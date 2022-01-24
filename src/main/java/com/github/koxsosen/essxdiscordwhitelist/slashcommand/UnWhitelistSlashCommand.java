@@ -5,7 +5,7 @@ import net.essentialsx.api.v2.services.discord.InteractionCommandArgument;
 import net.essentialsx.api.v2.services.discord.InteractionCommandArgumentType;
 import net.essentialsx.api.v2.services.discord.InteractionEvent;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
+import org.bukkit.OfflinePlayer;
 
 import java.util.List;
 
@@ -15,22 +15,20 @@ public class UnWhitelistSlashCommand implements InteractionCommand {
     public void onCommand(InteractionEvent event) {
         // The name of the argument here has to be the same you used in getArguments()
         final String playerName = event.getStringArgument("player");
-        final Player player = Bukkit.getPlayerExact(playerName);
-
-
+        final OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(playerName);
 
 
         // No offline mode check. You can't unwhitelist someone who haven't joined before, can you?
-        if (player == null) {
+        if (offlinePlayer == null) {
             event.reply("A player by that name could not be found!");
             return;
         }
 
         // Un-whitelist player
-        player.setWhitelisted(false);
+        offlinePlayer.setWhitelisted(false);
 
-        if (!player.isWhitelisted()) {
-            event.reply("Un-whitelisted " + player.getName() + ".");
+        if (!offlinePlayer.isWhitelisted()) {
+            event.reply("Un-whitelisted " + playerName);
         } else {
             event.reply("Encountered an error while un-whitelisting the player.");
         }
