@@ -14,7 +14,7 @@ public class WhitelistSlashCommand implements InteractionCommand {
     @Override
     public void onCommand(InteractionEvent event) {
         // The name of the argument here has to be the same you used in getArguments()
-        final String playername = event.getStringArgument("playername");
+        final String playername = event.getStringArgument("player");
         final OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(playername);
 
         // If the player haven't joined before.
