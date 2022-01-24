@@ -4,7 +4,9 @@ import com.github.koxsosen.essxdiscordwhitelist.slashcommand.UnWhitelistSlashCom
 import com.github.koxsosen.essxdiscordwhitelist.slashcommand.WhitelistSlashCommand;
 import net.essentialsx.api.v2.services.discord.DiscordService;
 import net.essentialsx.api.v2.services.discord.InteractionException;
+import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Essxdiscordwhitelist extends JavaPlugin {
